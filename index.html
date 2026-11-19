@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Travel BD - বাংলাদেশের সুন্দর জায়গা, ভ্রমণ গাইড ও পরিকল্পনা।">
+<title>Travel BD | Explore Bangladesh</title>
+<style>
+:root{--green:#087f5b;--dark:#073b35;--mint:#e9f8f1;--ink:#17332d}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#f7faf8;color:var(--ink)}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:10;background:#073b35;color:#fff;padding:15px 6%;display:flex;align-items:center;justify-content:space-between;gap:15px;box-shadow:0 4px 18px #001d1833}
+.logo{font-size:24px;font-weight:850;color:#76e5bd;letter-spacing:.2px}
+nav{display:flex;gap:22px;flex-wrap:wrap}
+nav a{font-size:14px;color:#effff8}
+nav a:hover{color:#76e5bd}
+.hero{min-height:480px;padding:100px 7%;display:grid;place-items:center;text-align:center;color:white;background:linear-gradient(90deg,#042f2bd9,#042f2b66),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1900&q=85') center/cover}
+.hero-inner{max-width:780px}
+.tag{display:inline-block;padding:8px 14px;border:1px solid #ffffff88;border-radius:30px;background:#ffffff18;font-size:13px;margin-bottom:18px}
+.hero h1{font-size:clamp(34px,6vw,62px);line-height:1.12;margin-bottom:17px}
+.hero p{font-size:18px;line-height:1.7;color:#effff8;margin:0 auto 28px;max-width:620px}
+.search-wrap{display:flex;gap:8px;max-width:550px;margin:auto;background:white;padding:7px;border-radius:12px}
+.search-wrap input{flex:1;min-width:0;border:0;outline:0;padding:12px;font-size:15px;border-radius:8px;color:#18332e}
+.btn{display:inline-block;background:#10a77c;color:#fff;border:0;border-radius:9px;padding:12px 18px;font-weight:700;cursor:pointer}
+.btn:hover{background:#07845f}
+section{padding:68px 7%}
+.section-top{text-align:center;margin-bottom:30px}
+.eyebrow{color:var(--green);font-weight:800;text-transform:uppercase;letter-spacing:1.5px;font-size:12px}
+h2{font-size:clamp(26px,4vw,36px);margin:8px 0;color:var(--dark)}
+.section-top p{color:#61736d;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:23px}
+.card{background:white;border-radius:17px;overflow:hidden;box-shadow:0 8px 28px #0b453014;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 32px #0b453022}
+.card img{width:100%;height:205px;object-fit:cover;display:block}
+.card-body{padding:19px}
+.location{font-size:12px;color:var(--green);font-weight:750;margin-bottom:8px}
+.card h3{font-size:21px;margin-bottom:8px;color:var(--dark)}
+.card p{font-size:14px;line-height:1.65;color:#65756f;min-height:46px}
+.card .btn{margin-top:14px;font-size:13px}
+.no-results{text-align:center;color:#65756f;padding:25px;display:none}
+.about{background:var(--mint);text-align:center}
+.about p{max-width:760px;margin:0 auto;color:#526a62;line-height:1.85}
+.owner-card{max-width:650px;margin:auto;background:white;padding:28px;border-radius:18px;text-align:center;box-shadow:0 8px 28px #0b453014}
+.avatar{width:86px;height:86px;border-radius:50%;margin:0 auto 13px;display:grid;place-items:center;background:linear-gradient(135deg,#d8f8e9,#83d9b6);font-size:36px}
+.owner-card h3{font-size:24px;color:var(--dark);margin-bottom:5px}
+.owner-card p{color:#66766f}
+.contact{text-align:center}
+.contact p{color:#60736c;line-height:1.8;margin-bottom:18px}
+footer{background:#052f2b;color:#dff8ee;text-align:center;padding:30px 15px;line-height:1.9}
+footer strong{color:#76e5bd}
+.modal{display:none;position:fixed;inset:0;z-index:30;background:#001b17b8;padding:20px;align-items:center;justify-content:center}
+.modal-box{background:white;max-width:480px;width:100%;border-radius:16px;padding:25px;position:relative}
+.modal-box h3{font-size:24px;color:var(--dark);margin-bottom:10px}
+.modal-box p{line-height:1.8;color:#5d7069}
+.close{position:absolute;right:15px;top:10px;border:0;background:none;font-size:27px;cursor:pointer;color:#53665f}
+@media(max-width:650px){header{padding:14px 5%;flex-direction:column}nav{justify-content:center;gap:14px}.hero{min-height:440px;padding:75px 5%}.hero p{font-size:16px}.search-wrap{flex-direction:column;background:transparent;padding:0}.search-wrap input{padding:15px}section{padding:52px 5%}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#home">🌍 Travel BD</a>
+  <nav aria-label="Main navigation">
+    <a href="#home">Home</a><a href="#places">Destinations</a><a href="#about">About</a><a href="#owner">Owner</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <span class="tag">DISCOVER • EXPLORE • ENJOY</span>
+      <h1>Explore the Beauty of Bangladesh</h1>
+      <p>পাহাড়, সমুদ্র, বন আর সবুজের দেশে ঘুরে দেখুন নতুন জায়গা। আপনার পরবর্তী ভ্রমণের অনুপ্রেরণা শুরু হোক এখান থেকেই।</p>
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="কোথায় ঘুরতে যেতে চান? যেমন: সিলেট" aria-label="Search destinations">
+        <a class="btn" href="#places">Explore Places</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="places">
+    <div class="section-top">
+      <span class="eyebrow">Find your next trip</span>
+      <h2>Popular Destinations</h2>
+      <p>বাংলাদেশের জনপ্রিয় কিছু ভ্রমণস্থানের সঙ্গে পরিচিত হোন।</p>
+    </div>
+    <div class="grid" id="destinationGrid">
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85" alt="নীল সমুদ্রের ঢেউ">
+        <div class="card-body"><div class="location">📍 Cox's Bazar, Chattogram</div><h3>Cox's Bazar</h3><p>সমুদ্রের ঢেউ, দীর্ঘ বালুকাবেলা আর সূর্যাস্ত উপভোগ করুন।</p><button class="btn" onclick="showDetails('Cox’s Bazar','সমুদ্র সৈকতে সময় কাটান, সূর্যাস্ত দেখুন এবং স্থানীয় নিয়ম মেনে সৈকত পরিষ্কার রাখুন। যাত্রার আগে পরিবহন ও হোটেলের বর্তমান ভাড়া যাচাই করুন।')">Explore More →</button></div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85" alt="সবুজ পাহাড় ও লেক">
+        <div class="card-body"><div class="location">📍 Sajek, Rangamati</div><h3>Sajek Valley</h3><p>পাহাড়ের সারি, মেঘ আর মনোমুগ্ধকর প্রাকৃতিক দৃশ্য।</p><button class="btn" onclick="showDetails('Sajek Valley','সাজেকের পাহাড়ি দৃশ্য ও মেঘ উপভোগ করুন। যাওয়ার আগে স্থানীয় প্রশাসনের নির্দেশনা, যাতায়াতের নিয়ম ও আবহাওয়া জেনে নিন।')">Explore More →</button></div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=85" alt="ঘন সবুজ বন">
+        <div class="card-body"><div class="location">📍 Khulna Division</div><h3>Sundarbans</h3><p>বিশ্বের বৃহত্তম ম্যানগ্রোভ বন ও বন্যপ্রকৃতির বিস্ময়।</p><button class="btn" onclick="showDetails('Sundarbans','অনুমোদিত ট্যুর অপারেটর ও গাইডের মাধ্যমে সুন্দরবন ভ্রমণ করুন। বন বিভাগের অনুমতি ও নিরাপত্তা নির্দেশনা মেনে চলুন।')">Explore More →</button></div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85" alt="সবুজ প্রকৃতি ও বন">
+        <div class="card-body"><div class="location">📍 Sylhet</div><h3>Sylhet</h3><p>চা বাগান, ঝরনা, নদী আর সবুজ প্রকৃতির টানে ঘুরে আসুন।</p><button class="btn" onclick="showDetails('Sylhet','শ্রীমঙ্গল, চা বাগান, জাফলং ও রাতারগুলের মতো জায়গা ঘুরে দেখতে পারেন। স্থানভেদে প্রবেশের নিয়ম ও সময় জেনে নিন।')">Explore More →</button></div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85" alt="উঁচু পাহাড়">
+        <div class="card-body"><div class="location">📍 Bandarban</div><h3>Bandarban</h3><p>পাহাড়, মেঘ আর আঁকাবাঁকা পথের রোমাঞ্চকর অভিজ্ঞতা।</p><button class="btn" onclick="showDetails('Bandarban','বান্দরবানের দর্শনীয় স্থান ভ্রমণের আগে স্থানীয় প্রশাসনের সর্বশেষ ভ্রমণ নির্দেশনা ও অনুমতির প্রয়োজনীয়তা যাচাই করুন।')">Explore More →</button></div>
+      </article>
+      <article class="card">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85" alt="প্রাকৃতিক ল্যান্ডস্কেপ">
+        <div class="card-body"><div class="location">📍 Kuakata, Patuakhali</div><h3>Kuakata</h3><p>সমুদ্রসৈকত থেকে সূর্যোদয় ও সূর্যাস্ত দেখার অনন্য অভিজ্ঞতা।</p><button class="btn" onclick="showDetails('Kuakata','কুয়াকাটা সমুদ্রসৈকতে সূর্যোদয় ও সূর্যাস্ত উপভোগ করতে পারেন। আবহাওয়া ও যাতায়াতের সময় আগে যাচাই করুন।')">Explore More →</button></div>
+      </article>
+    </div>
+    <p class="no-results" id="noResults">দুঃখিত, এই নামে কোনো জায়গা পাওয়া যায়নি। অন্য নাম দিয়ে খুঁজুন।</p>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-top"><span class="eyebrow">About us</span><h2>Travel BD সম্পর্কে</h2></div>
+    <p>Travel BD একটি ভ্রমণ বিষয়ক তথ্যভিত্তিক ওয়েবসাইট। বাংলাদেশের সুন্দর জায়গা, ভ্রমণ পরিকল্পনা এবং প্রয়োজনীয় গাইড এক জায়গায় তুলে ধরাই আমাদের লক্ষ্য। ভ্রমণের আগে সবসময় স্থানীয় কর্তৃপক্ষের সর্বশেষ নির্দেশনা, যাতায়াত ও খরচ যাচাই করুন।</p>
+  </section>
+
+  <section id="owner">
+    <div class="section-top"><span class="eyebrow">Meet the owner</span><h2>Website Owner</h2></div>
+    <div class="owner-card"><div class="avatar">👩🏻‍💻</div><h3>Fowzia Farid Ela</h3><p>Founder &amp; Owner of Travel BD</p></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="section-top"><span class="eyebrow">Get in touch</span><h2>Contact Us</h2></div>
+    <p>Travel BD সম্পর্কে মতামত বা পরামর্শ জানাতে আমাদের সঙ্গে যোগাযোগ করুন।</p>
+    <a class="btn" href="mailto:your@email.com">Email Us</a>
+    <p style="font-size:12px;margin-top:12px">প্রকাশের আগে your@email.com-এর জায়গায় নিজের ইমেইল ঠিকানা বসাবেন।</p>
+  </section>
+</main>
+<footer><strong>🌍 Travel BD</strong><br>Explore Bangladesh • Discover Happiness<br>© 2026 Travel BD · Owner: Fowzia Farid Ela</footer>
+
+<div class="modal" id="detailsModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeDetails()">
+  <div class="modal-box"><button class="close" onclick="closeDetails()" aria-label="Close">&times;</button><h3 id="modalTitle"></h3><p id="modalText"></p><button class="btn" style="margin-top:18px" onclick="closeDetails()">Close</button></div>
+</div>
+<script>
+const searchInput=document.getElementById('search');
+searchInput.addEventListener('input',function(){
+  const term=this.value.toLocaleLowerCase('bn').trim();
+  let visible=0;
+  document.querySelectorAll('.card').forEach(card=>{
+    const match=card.innerText.toLocaleLowerCase('bn').includes(term);
+    card.style.display=match?'':'none';
+    if(match)visible++;
+  });
+  document.getElementById('noResults').style.display=visible?'none':'block';
+});
+function showDetails(title,text){
+  document.getElementById('modalTitle').textContent=title;
+  document.getElementById('modalText').textContent=text;
+  document.getElementById('detailsModal').style.display='flex';
+}
+function closeDetails(){document.getElementById('detailsModal').style.display='none'}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDetails()});
+</script>
+</body>
+</html>
